@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function giaiPtbac2() {
+
+            let a = document.getElementById('a').value;
+            b = document.getElementById('b').value;
+            c = document.getElementById('c').value;
+            delta = b * b - 4 * a * c;
+            canDelta = Math.sqrt(delta);
+
+            if (a == 0) {
+                if (b == 0) {
+                    if (c == 0)
+                        document.getElementById('result').innerHTML = ('Phương trình vô số nghiệm');
+                    else
+                        document.getElementById('result').innerHTML = ('Phương trình vô nghiệm');
+                } else
+                    document.getElementById('result').innerHTML = ('Phương trình có 1 nghiệm ' + 'x' + '=' + (-c) / b);
+            } else {
+
+                if (delta == 0) {
+                    document.getElementById('result').innerHTML = ('Phương trình có nghiệm kép ' + 'x1' + '=' + 'x2' + '=' + (-b / (2 * a)));
+                } else if (delta < 0) {
+                    document.getElementById('result').innerHTML = ('Phương trình vô nghiệm ');
+                } else {
+                    document.getElementById('result').innerHTML = ('Phương trình có 2 nghiệm ' + 'x1' + '=' + ((-b + canDelta) / (2 * a)) + ';' + ' x2' + '=' + ((-b - canDelta) / (2 * a)));
+
+                }
+            }
+        }
+
+    </script>
+</head>
+<body>
+<input type="text" id="a">x<sup>2</sup> + <input type="text" id="b">x + <input type="text" id="c"> = 0 <br>
+<button onclick="giaiPtbac2()">Giải phương trình</button>
+<div id="result"></div>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<script>
+    function giaiPt(){
+        let a = document.getElementById('a').value;
+            b = document.getElementById('b').value;
+
+        if( a == 0){
+            if(b == 0)
+                document.getElementById('result').innerHTML=('Phương trình vô số nghiệm');
+            else
+                document.getElementById('result').innerHTML=('Phương trình vô nghiệm');
+        }
+        else
+            document.getElementById('result').innerHTML=('Phương trình có nghiệm ' + (-b)/a );
+    }
+</script>
+
+</head>
+<body>
+<input type="text" id="a">x + <input type="text" id="b"> = 0 <br>
+
+<button onclick="giaiPt()">Giải phương trình</button>
+<div id="result"></div>
+
+</body>
+</html>
